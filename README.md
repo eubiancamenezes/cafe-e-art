@@ -1,8 +1,6 @@
 
 # Café&Art
 
-![Logo do Café&Art](img/logo.png)
-
 ## Descrição do Projeto
 Café&Art é um site para uma cafeteria e ateliê de desenho e pintura, pensado para ser um espaço aconchegante, vibrante e cheio de arte. O site é colorido, estiloso e atrativo, perfeito para famílias e pessoas de todas as idades que desejam aproveitar café, oficinas de arte e eventos culturais.
 
