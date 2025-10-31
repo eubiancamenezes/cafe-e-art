@@ -1,5 +1,6 @@
-
 # Café&Art
+
+![Logo do Café&Art](img/logo.png)
 
 ## Descrição do Projeto
 Café&Art é um site para uma cafeteria e ateliê de desenho e pintura, pensado para ser um espaço aconchegante, vibrante e cheio de arte. O site é colorido, estiloso e atrativo, perfeito para famílias e pessoas de todas as idades que desejam aproveitar café, oficinas de arte e eventos culturais.
@@ -50,14 +51,15 @@ Café&Art/
 ```
 
 ## Como Usar
-1. Clone este repositório:
+1. Acesse o repositório no GitHub: [Café&Art](https://github.com/eubiancamenezes/cafe-e-art)  
+2. Clone o repositório:
 ```
 
 git clone [https://github.com/eubiancamenezes/cafe-e-art.git](https://github.com/eubiancamenezes/cafe-e-art.git)
 
 ```
-2. Abra o arquivo `index.html` no navegador.  
-3. Navegue pelas páginas: Início, Sobre e Cardápio.
+3. Abra o arquivo `index.html` no navegador.  
+4. Navegue pelas páginas: Início, Sobre e Cardápio.
 
 ## Objetivo
 Criar um site atrativo, colorido e funcional para o Café&Art, que combine o universo do café com atividades artísticas, promovendo interação e experiências positivas para os clientes.
@@ -68,5 +70,4 @@ Este projeto é **livre para uso e modificação**.
 ---
 
 **Café&Art** – Um espaço de café, arte e convivência para todos.
-```
-
+---
