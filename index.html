@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café&Art - Início</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== SISTEMA DE DESIGN ===== */
+        :root {
+            --cor-principal: #D2691E;
+            --cor-secundaria: #A0522D;
+            --cor-terciaria: #8B4513;
+            --cor-destaque: #FFB347;
+            --cor-fundo: #FFF8F0;
+            --cor-card: #FFF4E6;
+            --cor-texto: #3E2723;
+            --cor-hover: #FF8C00;
+            --cor-link: #6B4226;
+            --cor-bg-footer: #5D4037;
+            --cor-botao: #FF7043;
+            --cor-botao-hover: #E64A19;
+            --cor-borda: #D7CCC8;
+            --cor-alerta: #FF5722;
+            --cor-sucesso: #4CAF50;
+            --cor-info: #2196F3;
+
+            --font-xl: 2.5rem;
+            --font-l: 2rem;
+            --font-m: 1.25rem;
+            --font-s: 1rem;
+            --font-xs: 0.875rem;
+
+            --space-8: 8px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            padding: var(--space-16);
+            background-color: var(--cor-principal);
+        }
+
+        .logo img {
+            width: 3cm;
+            height: 3cm;
+            margin: 0 auto;
+            display: block;
+        }
+
+        nav {
+            margin-top: var(--space-8);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: var(--space-24);
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            padding: var(--space-8) var(--space-16);
+            border-radius: 6px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: var(--cor-hover);
+        }
+
+        /* ===== BANNER ===== */
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .banner-text h1 {
+            font-size: var(--font-xl);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* ===== SOBRE ===== */
+        .sobre {
+            padding: var(--space-48) var(--space-32);
+            text-align: center;
+        }
+
+        .sobre h2 {
+            color: var(--cor-terciaria);
+            font-size: var(--font-l);
+            margin-bottom: var(--space-16);
+        }
+
+        .sobre p {
+            font-size: var(--font-s);
+            max-width: 800px;
+            margin: 0 auto var(--space-16);
+        }
+
+        /* ===== DESTAQUES ===== */
+        .destaques {
+            background-color: var(--cor-card);
+            padding: var(--space-48) var(--space-32);
+            text-align: center;
+        }
+
+        .destaques h2 {
+            color: var(--cor-secundaria);
+            margin-bottom: var(--space-32);
+        }
+
+        .destaques-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1cm; /* Espaçamento reduzido entre os dois cards */
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: var(--space-16);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 9cm;
+            height: 9cm;
+            border-radius: 8px;
+            object-fit: cover;
+            margin: 0 auto var(--space-16);
+        }
+
+        .card h3 {
+            color: var(--cor-terciaria);
+            margin-bottom: var(--space-8);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: var(--space-8);
+            background-color: var(--cor-botao);
+            color: white;
+            padding: var(--space-8) var(--space-16);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-botao-hover);
+        }
+
+        /* ===== CONTATO ===== */
+        .contato {
+            padding: var(--space-48) var(--space-32);
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-16);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: var(--space-8);
+            border: 1px solid var(--cor-borda);
+            border-radius: 6px;
+            font-size: var(--font-s);
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: var(--space-32);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .close {
+            float: right;
+            font-size: var(--font-l);
+            cursor: pointer;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--cor-bg-footer);
+            color: white;
+            text-align: center;
+            padding: var(--space-16);
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 1024px) {
+            .card img {
+                width: 8cm;
+                height: 8cm;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .destaques-grid {
+                flex-direction: column;
+                gap: 2cm; /* Mais espaçamento em telas pequenas */
+            }
+            .card img {
+                width: 7cm;
+                height: 7cm;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner img {
+                height: 150px;
+            }
+            .card img {
+                width: 6cm;
+                height: 6cm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo Café&Art">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="cardapio.html">Cardápio</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+    <img src="img/capa.jpg" alt="Café&Art Capa">
+    <div class="banner-text">
+        <h1>Bem-vindo ao Café&Art</h1>
+        <p>Sabores artesanais e criatividade em um só lugar</p>
+    </div>
+</section>
+
+<section class="sobre">
+    <h2>A ideia do Café&Art</h2>
+    <p>
+        O Café&Art nasceu para unir o aconchego de uma cafeteria artesanal ao universo inspirador da arte.
+        Aqui, o aroma do café se mistura com o som das risadas e da criatividade. É um espaço para relaxar,
+        criar e se conectar — com sabor e cor em cada detalhe.
+    </p>
+</section>
+
+<section class="destaques">
+    <h2>Destaques</h2>
+    <div class="destaques-grid">
+        <div class="card">
+            <img src="img/bolos.jpg" alt="Cardápio Café&Art">
+            <h3>Nosso Cardápio</h3>
+            <p>Delícias artesanais: cafés, bolos e salgados feitos com amor e arte.</p>
+            <a href="cardapio.html" class="btn">Ver Cardápio</a>
+        </div>
+        <div class="card">
+            <img src="img/eventos.jpg" alt="Oficinas Café&Art">
+            <h3>Oficinas Criativas</h3>
+            <p>Participe de oficinas de pintura e desenho enquanto saboreia seu café.</p>
+            <a href="sobre.html" class="btn">Conheça Mais</a>
+        </div>
+    </div>
+</section>
+
+<section class="contato">
+    <h2>Fale Conosco</h2>
+    <form id="contatoForm">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+</section>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Mensagem enviada com sucesso! ☕🎨</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Café&Art - Todos os direitos reservados</p>
+</footer>
+
+<script>
+const form = document.getElementById('contatoForm');
+const modal = document.getElementById('modal');
+const closeBtn = document.querySelector('.close');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    modal.style.display = 'flex';
+    form.reset();
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+});
+</script>
+
+</body>
+</html>

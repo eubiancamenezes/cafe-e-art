@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café&Art - Sobre</title>
+<style>
+    /* ===== Variáveis de Sistema de Design ===== */
+    :root {
+        /* 15 cores harmoniosas */
+        --cor-principal: #FF6F61;
+        --cor-secundaria: #FFD166;
+        --cor-terciaria: #06D6A0;
+        --cor-quaternaria: #118AB2;
+        --cor-quinta: #EF476F;
+        --cor-sexta: #073B4C;
+        --cor-setima: #8AC926;
+        --cor-oitava: #FFD6BA;
+        --cor-nona: #8338EC;
+        --cor-decima: #FF9F1C;
+        --cor-onzima: #06C1D5;
+        --cor-dozima: #F72585;
+        --cor-trezima: #7209B7;
+        --cor-quatorzima: #3A0CA3;
+        --cor-quinzima: #4CC9F0;
+
+        /* Background e texto */
+        --cor-bg-card: #FFF4E6;
+        --cor-bg-pagina: #FFF8F0;
+        --cor-texto: #333333;
+        --cor-hover: #FF8C78;
+
+        /* Tipografia 7 fontes */
+        --font-primary: 'Poppins', sans-serif;
+        --font-secondary: 'Roboto', sans-serif;
+        --font-tertiary: 'Lora', serif;
+        --font-quaternary: 'Montserrat', sans-serif;
+        --font-quinta: 'Raleway', sans-serif;
+        --font-sexta: 'Merriweather', serif;
+        --font-setima: 'Playfair Display', serif;
+
+        /* Tamanhos de fonte */
+        --font-xl: 3rem;
+        --font-l: 2.25rem;
+        --font-m: 1.5rem;
+        --font-s: 1.125rem;
+        --font-xs: 0.875rem;
+
+        /* Espaçamento modular */
+        --space-8: 8px;
+        --space-16: 16px;
+        --space-24: 24px;
+        --space-32: 32px;
+        --space-48: 48px;
+        --space-64: 64px;
+    }
+
+    /* ===== Reset básico ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-primary); background-color: var(--cor-bg-pagina); color: var(--cor-texto); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== Header ===== */
+    header { display: flex; justify-content: space-between; align-items: center; padding: var(--space-16) var(--space-32); background-color: var(--cor-principal); }
+    header .logo img { height: 50px; }
+    nav ul { list-style: none; display: flex; gap: var(--space-24); }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; padding: var(--space-8) var(--space-16); border-radius: 6px; transition: background 0.3s; }
+    nav ul li a:hover, nav ul li a.active { background-color: var(--cor-hover); }
+
+    /* ===== Banner ===== */
+    .banner { position: relative; text-align: center; color: white; }
+    .banner img { width: 100%; height: 350px; object-fit: cover; opacity: 0.9; }
+    .banner-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .banner-text h1 { font-size: var(--font-xl); margin-bottom: var(--space-16); text-shadow: 2px 2px 4px rgba(0,0,0,0.4); font-family: var(--font-secondary); }
+    .banner-text p { font-size: var(--font-m); text-shadow: 1px 1px 3px rgba(0,0,0,0.3); font-family: var(--font-primary); }
+
+    /* ===== Grid Sobre ===== */
+    .sobre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-32); padding: var(--space-32); }
+    .sobre-card { background-color: var(--cor-bg-card); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center; cursor: pointer; }
+    .sobre-card img { width: 100%; height: 180px; object-fit: cover; }
+    .sobre-card h3 { margin: var(--space-16) 0 var(--space-8); color: var(--cor-principal); font-size: var(--font-l); font-family: var(--font-tertiary); }
+    .sobre-card p { padding: 0 var(--space-16) var(--space-16); font-size: var(--font-s); font-family: var(--font-quaternary); }
+    .sobre-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+    /* ===== Footer ===== */
+    footer { text-align: center; padding: var(--space-16); background-color: var(--cor-quaternaria); color: white; font-size: var(--font-s); font-family: var(--font-sexta); }
+
+    /* ===== Menu Mobile ===== */
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .hamburger span { height: 3px; width: 25px; background: white; border-radius: 2px; }
+    @media(max-width: 768px) {
+        nav ul { display: none; flex-direction: column; background-color: var(--cor-principal); position: absolute; top: 70px; right: 0; width: 200px; padding: var(--space-16); border-radius: 0 0 8px 8px; }
+        nav ul.show { display: flex; }
+        .hamburger { display: flex; }
+    }
+
+    /* ===== Badges coloridas ===== */
+    .badge { display: inline-block; padding: 4px 8px; border-radius: 6px; font-size: var(--font-xs); color: white; margin: 4px; font-family: var(--font-quinta); }
+    .badge-cor1 { background-color: var(--cor-principal); }
+    .badge-cor2 { background-color: var(--cor-secundaria); }
+    .badge-cor3 { background-color: var(--cor-terciaria); }
+    .badge-cor4 { background-color: var(--cor-quaternaria); }
+    .badge-cor5 { background-color: var(--cor-quinta); }
+    .badge-cor6 { background-color: var(--cor-sexta); }
+    .badge-cor7 { background-color: var(--cor-setima); }
+    .badge-cor8 { background-color: var(--cor-oitava); }
+    .badge-cor9 { background-color: var(--cor-nona); }
+    .badge-cor10 { background-color: var(--cor-decima); }
+    .badge-cor11 { background-color: var(--cor-onzima); }
+    .badge-cor12 { background-color: var(--cor-dozima); }
+    .badge-cor13 { background-color: var(--cor-trezima); }
+    .badge-cor14 { background-color: var(--cor-quatorzima); }
+    .badge-cor15 { background-color: var(--cor-quinzima); }
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="img/logo.png" alt="Café&Art Logo">
+    </div>
+    <nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html" class="active">Sobre</a></li>
+            <li><a href="cardapio.html">Cardápio</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+    <img src="img/capa.jpg" alt="Café&Art Capa">
+    <div class="banner-text">
+        <h1>Sobre o Café&Art</h1>
+        <p>Um espaço aconchegante, vibrante e cheio de arte</p>
+    </div>
+</section>
+
+<section class="sobre-grid">
+    <div class="sobre-card">
+        <img src="img/espaco.jpg" alt="Espaço">
+        <h3>Nosso Espaço</h3>
+        <p>Um ambiente aconchegante, ideal para relaxar, trabalhar ou se encontrar com amigos.</p>
+        <span class="badge badge-cor1">Conforto</span>
+        <span class="badge badge-cor2">Arte</span>
+    </div>
+
+    <div class="sobre-card">
+        <img src="img/eventos.jpg" alt="Eventos">
+        <h3>Eventos</h3>
+        <p>Oficinas de arte, exposições e encontros culturais, sempre com muita criatividade.</p>
+        <span class="badge badge-cor3">Cultura</span>
+        <span class="badge badge-cor4">Criatividade</span>
+    </div>
+
+    <div class="sobre-card">
+        <img src="img/kids.jpg" alt="Art Kids">
+        <h3>Espaço Art Kids</h3>
+        <p>Área dedicada às crianças, com atividades de pintura, desenho e diversão artística.</p>
+        <span class="badge badge-cor5">Infantil</span>
+        <span class="badge badge-cor6">Diversão</span>
+    </div>
+
+    <div class="sobre-card">
+        <img src="img/pet.jpg" alt="Aceita Animais">
+        <h3>Aceita Animais</h3>
+        <p>Seu pet é bem-vindo! Temos cantinhos especiais para eles enquanto você aproveita o café.</p>
+        <span class="badge badge-cor7">Pet Friendly</span>
+    </div>
+
+    <div class="sobre-card">
+        <img src="img/cafeteria.jpg" alt="Cafeteria">
+        <h3>Cafeteria Especializada</h3>
+        <p>Bebidas artesanais e saborosas, preparadas com grãos selecionados e muito carinho.</p>
+        <span class="badge badge-cor8">Sabor</span>
+        <span class="badge badge-cor9">Artesanal</span>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Café&Art - Todos os direitos reservados</p>
+</footer>
+
+<script>
+/* ===== Menu Hambúrguer ===== */
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav ul');
+hamburger.addEventListener('click', () => { navMenu.classList.toggle('show'); });
+
+/* ===== Scroll suave ===== */
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){ window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' }); }
+        if(navMenu.classList.contains('show')){ navMenu.classList.remove('show'); }
+    });
+});
+</script>
+</body>
+</html>
